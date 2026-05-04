@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diósd Bike — Kerékpárbolt és szervíz Diósdon, 1995 óta</title>
+  <meta name="description" content="Diósdi kerékpárbolt, gyors szervízzel és személyes tanácsadással. Sashegyi köz 12. · H–P 10–18, Sz 10–13. · Tel.: 06 (23) 381-751." />
+  <meta name="theme-color" content="#FAF7F2" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Diósd Bike — Kerékpárbolt és szervíz" />
+  <meta property="og:description" content="Régi vágású szakbolt Diósdon. Aznapi szervíz, személyes tanácsadás, 1995 óta." />
+  <meta property="og:locale" content="hu_HU" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23131310'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%23FAF7F2'%3ED%3C/text%3E%3C/svg%3E" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BicycleStore",
+    "name": "Diósd Bike",
+    "@id": "https://www.diosdbike.hu",
+    "url": "https://www.diosdbike.hu",
+    "telephone": "+36-23-381-751",
+    "email": "diosd01@gmail.com",
+    "priceRange": "$$",
+    "image": "https://www.diosdbike.hu/og.jpg",
+    "address": {"@type":"PostalAddress","streetAddress":"Sashegyi köz 12.","addressLocality":"Diósd","postalCode":"2049","addressCountry":"HU"},
+    "geo": {"@type":"GeoCoordinates","latitude":47.4079,"longitude":18.9519},
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"18:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"13:00"}
+    ],
+    "aggregateRating": {"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"6"}
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #FAF7F2;
+      --bg-alt: #F1ECE3;
+      --bg-card: #FFFFFF;
+      --bg-deep: #131310;
+      --ink: #131310;
+      --ink-soft: #555049;
+      --ink-faint: #8A847B;
+      --accent: #5C8A28;
+      --accent-deep: #406010;
+      --accent-soft: #C8DFA0;
+      --line: rgba(19, 19, 16, 0.10);
+      --line-strong: rgba(19, 19, 16, 0.18);
+      --radius: 14px;
+      --radius-lg: 22px;
+      --maxw: 1100px;
+      --pad: clamp(20px, 4vw, 40px);
+      --serif: 'Instrument Serif', Georgia, serif;
+      --sans: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--bg);
+      font-size: 17px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img, svg { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: transparent; }
+
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); }
+    section { padding: clamp(72px, 10vw, 130px) 0; position: relative; }
+
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.04; letter-spacing: -0.014em; color: var(--ink); }
+    h1 { font-size: clamp(52px, 9vw, 108px); }
+    h2 { font-size: clamp(36px, 5.6vw, 64px); }
+    h3 { font-size: 19px; font-family: var(--sans); font-weight: 500; letter-spacing: -0.005em; }
+    .lede { font-size: clamp(18px, 1.55vw, 20px); line-height: 1.55; color: var(--ink-soft); max-width: 56ch; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--ink-faint);
+      margin-bottom: 28px;
+    }
+    .eyebrow::before { content: ""; width: 22px; height: 1px; background: var(--ink-faint); }
+
+    /* === Wordmark logo (single source of truth) === */
+    .logo {
+      display: inline-flex; align-items: baseline; gap: 7px;
+      color: var(--ink); line-height: 1;
+    }
+    .logo-mark {
+      font-family: var(--serif); font-size: 26px; letter-spacing: -0.02em;
+    }
+    .logo-mark em { font-style: italic; color: var(--accent-deep); }
+    .logo-est {
+      font-family: var(--sans); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.24em; color: var(--ink-faint); text-transform: uppercase;
+      transform: translateY(-2px);
+    }
+
+    /* === NAV === */
+    .nav {
+      position: sticky; top: 0; z-index: 60;
+      backdrop-filter: saturate(140%) blur(14px);
+      -webkit-backdrop-filter: saturate(140%) blur(14px);
+      background: rgba(250, 247, 242, 0.75);
+      border-bottom: 1px solid transparent;
+      transition: border-color .25s var(--ease), background .25s var(--ease);
+    }
+    .nav.scrolled { border-bottom-color: var(--line); background: rgba(250,247,242, 0.94); }
+    .nav-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 72px; }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-size: 14px; font-weight: 500;
+      padding: 11px 20px; border-radius: 999px;
+      background: var(--ink); color: var(--bg);
+      transition: transform .2s var(--ease), background .2s var(--ease);
+    }
+    .nav-cta:hover { background: var(--accent-deep); transform: translateY(-1px); }
+    .nav-cta svg { width: 13px; height: 13px; }
+    .nav-cta-text { display: inline; }
+    @media (max-width: 480px) { .nav-cta-text { display: none; } .nav-cta { padding: 11px 14px; } }
+
+    /* === HERO === */
+    .hero { padding-top: clamp(80px, 12vw, 160px); padding-bottom: clamp(48px, 7vw, 96px); }
+    .hero h1 { max-width: 14ch; }
+    .hero h1 em {
+      font-style: italic; color: var(--ink);
+      position: relative; display: inline-block; white-space: nowrap;
+    }
+    .hero h1 em::after {
+      content: ""; position: absolute; left: -2%; right: -2%; bottom: 0.10em; height: 0.18em;
+      background: var(--accent-soft); z-index: -1; border-radius: 4px;
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 1s var(--ease) .5s;
+    }
+    .hero.in h1 em::after { transform: scaleX(1); }
+
+    .hero-lede { margin-top: 28px; }
+    .hero-cta-row { display: flex; gap: 12px; margin-top: 36px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 26px; border-radius: 999px;
+      font-weight: 500; font-size: 15px;
+      transition: transform .2s var(--ease), background .2s var(--ease), color .2s, border-color .2s;
+    }
+    .btn-primary { background: var(--ink); color: var(--bg); }
+    .btn-primary:hover { background: var(--accent-deep); transform: translateY(-1px); }
+    .btn-ghost { color: var(--ink); border: 1px solid var(--line-strong); }
+    .btn-ghost:hover { background: var(--bg-alt); border-color: var(--ink); transform: translateY(-1px); }
+    .btn svg { width: 16px; height: 16px; }
+
+    .hero-meta {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px; margin-top: 56px;
+      padding-top: 28px; border-top: 1px solid var(--line);
+    }
+    .meta-item { font-size: 13px; }
+    .meta-item .label {
+      color: var(--ink-faint); letter-spacing: 0.18em; text-transform: uppercase;
+      font-size: 10px; font-weight: 500;
+    }
+    .meta-item .value {
+      font-family: var(--serif); font-size: clamp(20px, 2vw, 24px);
+      margin-top: 6px; color: var(--ink);
+    }
+    .meta-item .stars {
+      color: var(--accent-deep); letter-spacing: 1.5px; margin-right: 4px; font-size: 16px;
+    }
+    @media (max-width: 720px) {
+      .hero-meta { grid-template-columns: 1fr; gap: 18px; }
+      .hero-meta .meta-item:not(:first-child) { padding-top: 14px; border-top: 1px solid var(--line); }
+    }
+
+    /* === SERVICES === */
+    .services-head {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end;
+      margin-bottom: 56px;
+    }
+    .services-head h2 { max-width: 12ch; }
+    .services-head .lede { color: var(--ink-soft); }
+    @media (max-width: 760px) { .services-head { grid-template-columns: 1fr; gap: 24px; } }
+
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 32px 28px 28px;
+      min-height: 220px;
+      display: flex; flex-direction: column; gap: 12px;
+      transition: transform .3s var(--ease), border-color .3s, background .3s;
+    }
+    .service-card:hover { transform: translateY(-3px); border-color: var(--ink); }
+    .service-num {
+      font-family: var(--serif); color: var(--accent-deep);
+      font-size: 14px; letter-spacing: 0.04em; margin-bottom: 4px;
+    }
+    .service-card p { font-size: 15px; color: var(--ink-soft); line-height: 1.55; margin-top: auto; }
+    @media (max-width: 800px) { .services-grid { grid-template-columns: 1fr; } .service-card { min-height: auto; } }
+
+    /* === Quote band === */
+    .quote-band {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    }
+    .quote-content { max-width: 720px; margin: 0 auto; text-align: center; padding: 0 var(--pad); }
+    .quote-stars { color: var(--accent-deep); letter-spacing: 5px; font-size: 16px; margin-bottom: 28px; }
+    .quote-text { font-family: var(--serif); font-size: clamp(28px, 3.6vw, 42px); line-height: 1.28; color: var(--ink); }
+    .quote-author { font-size: 12px; color: var(--ink-faint); letter-spacing: 0.16em; text-transform: uppercase; margin-top: 32px; }
+
+    /* === Visit === */
+    .visit { background: var(--bg-deep); color: var(--bg); }
+    .visit .eyebrow { color: rgba(250,247,242,0.55); }
+    .visit .eyebrow::before { background: rgba(250,247,242,0.4); }
+    .visit h2 { color: var(--bg); }
+    .visit-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 5vw, 72px); align-items: start;
+    }
+    .visit-info .lede { color: rgba(250,247,242,0.75); }
+    .info-list { margin-top: 32px; }
+    .info-row {
+      display: grid; grid-template-columns: 100px 1fr;
+      gap: 18px; padding: 18px 0;
+      border-bottom: 1px solid rgba(250,247,242,0.10);
+      font-size: 15px;
+    }
+    .info-row:last-child { border-bottom: 0; }
+    .info-row .label {
+      font-size: 10px; font-weight: 500;
+      color: rgba(250,247,242,0.5);
+      letter-spacing: 0.18em; text-transform: uppercase;
+      align-self: center;
+    }
+    .info-row .value {
+      font-family: var(--serif); font-size: 22px; line-height: 1.2;
+    }
+    .info-row a:hover { color: var(--accent-soft); }
+
+    .map-card {
+      border-radius: var(--radius-lg); overflow: hidden;
+      aspect-ratio: 4/5;
+      box-shadow: 0 16px 50px rgba(0,0,0,0.35);
+    }
+    .map-card iframe { border: 0; width: 100%; height: 100%; filter: grayscale(0.2) contrast(0.95); }
+    @media (max-width: 880px) { .visit-grid { grid-template-columns: 1fr; } .map-card { aspect-ratio: 4/3; } }
+
+    .status-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; padding: 6px 12px; border-radius: 999px;
+      background: rgba(250,247,242,0.08); color: rgba(250,247,242,0.72);
+      margin-top: 12px; font-weight: 500;
+    }
+    .status-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(250,247,242,0.4); animation: pulse 2.4s ease-in-out infinite; }
+    .status-pill.open { background: rgba(92, 138, 40, 0.22); color: var(--accent-soft); }
+    .status-pill.open .dot { background: var(--accent); }
+    .status-pill.closed { background: rgba(250,247,242,0.06); color: rgba(250,247,242,0.55); }
+    .status-pill.closed .dot { background: rgba(250,247,242,0.4); animation: none; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+
+    /* === Footer === */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--line);
+      padding: 32px 0 28px;
+    }
+    .foot-row {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--ink-faint);
+    }
+    .foot-row a { transition: color .2s; }
+    .foot-row a:hover { color: var(--accent-deep); }
+
+    /* === Reveal === */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal[data-delay="1"] { transition-delay: .08s; }
+    .reveal[data-delay="2"] { transition-delay: .16s; }
+    .reveal[data-delay="3"] { transition-delay: .24s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .status-pill .dot { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============== NAV ============== -->
+  <nav class="nav" id="nav">
+    <div class="wrap nav-row">
+      <a href="#" class="logo" aria-label="Diósd Bike — főoldal">
+        <span class="logo-mark">Diósd <em>Bike</em></span>
+        <span class="logo-est">Est. 1995</span>
+      </a>
+      <a class="nav-cta" href="tel:+3623381751">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <span class="nav-cta-text">06 23 381-751</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ============== HERO ============== -->
+  <header class="hero" id="hero">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">Diósd · Sashegyi köz 12.</span>
+        <h1>Bicikli, szervíz, <em>személyesen</em>.</h1>
+        <p class="lede hero-lede">
+          Régi vágású szakbolt 1995 óta. Hozd be reggel, délutánra általában kész. Új gép, alkatrész, ruházat — gyere be, beszéljük meg.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="tel:+3623381751">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            Hívj minket
+          </a>
+          <a class="btn btn-ghost" href="https://maps.app.goo.gl/7EcecUvGE1uM5CsB9" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            Útvonal
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <div class="meta-item">
+            <div class="label">Most</div>
+            <div class="value" id="status-now">—</div>
+          </div>
+          <div class="meta-item">
+            <div class="label">Google</div>
+            <div class="value"><span class="stars">★★★★★</span>5,0</div>
+          </div>
+          <div class="meta-item">
+            <div class="label">Alapítva</div>
+            <div class="value">1995</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============== SERVICES ============== -->
+  <section id="szolgaltatasok">
+    <div class="wrap">
+      <div class="services-head reveal">
+        <h2>Mit csinálunk.</h2>
+        <p class="lede">30+ év tapasztalat egy boltban: kerékpár-értékesítés, szervíz és személyes tanácsadás. Minden, amit egy biciklin elképzelhetsz.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal" data-delay="1">
+          <div>
+            <div class="service-num">01</div>
+            <h3>Szervíz</h3>
+          </div>
+          <p>Karbantartás, javítás, beállítás. Gyakran aznapra kész. Pontos árajánlat előre, meglepetések nélkül.</p>
+        </div>
+
+        <div class="service-card reveal" data-delay="2">
+          <div>
+            <div class="service-num">02</div>
+            <h3>Kerékpár &amp; alkatrész</h3>
+          </div>
+          <p>Új kerékpárok minden korosztályra. Kopóelemek, fékek, váltók, kerekek, hajtáslánc — minden, ami egy biciklin lehet.</p>
+        </div>
+
+        <div class="service-card reveal" data-delay="3">
+          <div>
+            <div class="service-num">03</div>
+            <h3>Tanácsadás</h3>
+          </div>
+          <p>Ruházat, sisak, kiegészítők. Hívj fel, vagy gyere be — méretre, készletre személyesen segítünk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== QUOTE ============== -->
+  <section class="quote-band">
+    <div class="quote-content reveal">
+      <div class="quote-stars">★★★★★</div>
+      <p class="quote-text">„Gyors, korrekt, kedves. A komolyabb munkát is megcsinálják aznapra."</p>
+      <div class="quote-author">Visszatérő vásárló · Google értékelés</div>
+    </div>
+  </section>
+
+  <!-- ============== VISIT ============== -->
+  <section class="visit" id="latogatas">
+    <div class="wrap">
+      <div class="visit-grid">
+        <div class="visit-info reveal">
+          <span class="eyebrow">Gyere be</span>
+          <h2>Sashegyi köz 12.</h2>
+          <p class="lede" style="margin-top: 22px;">
+            Aktuális készletről és árakról kérjük telefonon érdeklődj — így biztosan tudunk azonnal segíteni.
+          </p>
+
+          <div class="info-list">
+            <div class="info-row">
+              <span class="label">Telefon</span>
+              <a class="value" href="tel:+3623381751">06 (23) 381-751</a>
+            </div>
+            <div class="info-row">
+              <span class="label">E-mail</span>
+              <a class="value" href="mailto:diosd01@gmail.com">diosd01@gmail.com</a>
+            </div>
+            <div class="info-row">
+              <span class="label">Nyitva</span>
+              <div>
+                <div class="value">H–P 10–18 · Sz 10–13</div>
+                <span class="status-pill" id="status-pill"><span class="dot"></span><span>Ellenőrzés…</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-card reveal" data-delay="1">
+          <iframe
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Di%C3%B3sd+Bike+Sashegyi+k%C3%B6z+12&output=embed"
+            title="Diósd Bike — térkép">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer>
+    <div class="wrap foot-row">
+      <span style="font-family: var(--serif); font-size: 17px; color: var(--ink);">Diósd Bike · Est. 1995</span>
+      <span>© <span id="year"></span> Diósd Kerékpár Kft.</span>
+      <span><a href="tel:+3623381751">06 23 381-751</a> · <a href="mailto:diosd01@gmail.com">diosd01@gmail.com</a></span>
+    </div>
+  </footer>
+
+  <script>
+    function computeStatus() {
+      const now = new Date();
+      const day = now.getDay();
+      const minutes = now.getHours()*60 + now.getMinutes();
+      let openMin = -1, closeMin = -1, label = "";
+      if (day >= 1 && day <= 5) { openMin = 600; closeMin = 1080; label = "H–P 10:00–18:00"; }
+      else if (day === 6) { openMin = 600; closeMin = 780; label = "Sz 10:00–13:00"; }
+      else { label = "Vasárnap zárva"; }
+      const open = minutes >= openMin && minutes < closeMin;
+      const heroEl = document.getElementById('status-now');
+      const pill = document.getElementById('status-pill');
+      let nextText = open
+        ? (() => {
+            const r = closeMin - minutes; const hh = Math.floor(r/60), mm = r%60;
+            return `Nyitva — még ${hh > 0 ? hh + " ó " : ""}${mm} p`;
+          })()
+        : `Most zárva · ${label}`;
+      if (heroEl) heroEl.textContent = open ? "Nyitva" : "Zárva";
+      if (pill) {
+        pill.classList.toggle('open', open);
+        pill.classList.toggle('closed', !open);
+        pill.querySelector('span:last-child').textContent = nextText;
+      }
+    }
+    computeStatus(); setInterval(computeStatus, 60000);
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+      document.getElementById('hero')?.classList.add('in');
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+      document.getElementById('hero')?.classList.add('in');
+    }
+  </script>
+</body>
+</html>

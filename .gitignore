@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Build / temp
+node_modules/
+dist/
+.cache/
+*.log
+
+# Local env
+.env
+.env.local
+
+# OS thumbnails
+Thumbs.db
+ehthumbs.db
