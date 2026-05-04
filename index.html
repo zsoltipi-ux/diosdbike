@@ -97,14 +97,20 @@
       display: inline-flex; align-items: center; gap: 12px;
       color: var(--ink); line-height: 1;
     }
-    .logo-img { height: 100px; width: auto; display: block; }
+    .logo-img {
+      width: 110px; height: auto; display: block;
+      filter: drop-shadow(0 1px 2px rgba(20,17,14,0.08));
+    }
+    .logo-text { display: flex; flex-direction: column; gap: 2px; line-height: 1; }
+    .logo-name { font-family: var(--serif); font-size: 26px; letter-spacing: -0.02em; color: var(--ink); }
+    .logo-name em { font-style: italic; color: var(--accent-deep); }
     .logo-est {
       font-family: var(--sans); font-size: 10px; font-weight: 500;
-      letter-spacing: 0.26em; color: var(--ink-faint); text-transform: uppercase;
-      padding-left: 12px; border-left: 1px solid var(--line);
+      letter-spacing: 0.22em; color: var(--ink-faint); text-transform: uppercase;
     }
     @media (max-width: 520px) {
-      .logo-img { height: 76px; }
+      .logo-img { width: 78px; }
+      .logo-name { font-size: 20px; }
       .logo-est { display: none; }
     }
 
@@ -302,11 +308,11 @@
   <nav class="nav" id="nav">
     <div class="wrap nav-row">
       <a href="#" class="logo" aria-label="Diósd Bike — főoldal">
-        <picture>
-          <source srcset="assets/logo.webp" type="image/webp" />
-          <img class="logo-img" src="assets/logo.png" alt="Diósd Bike" width="52" height="52" />
-        </picture>
-        <span class="logo-est">1995 óta</span>
+        <img class="logo-img" src="assets/logo.png" alt="" />
+        <span class="logo-text">
+          <span class="logo-name">Diósd <em>Bike</em></span>
+          <span class="logo-est">1995 óta</span>
+        </span>
       </a>
       <a class="nav-cta" href="tel:+3623381751">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
