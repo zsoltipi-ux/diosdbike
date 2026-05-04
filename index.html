@@ -169,24 +169,15 @@
 
     /* Hero visual: illustration card */
     .hero-visual {
-      position: relative; aspect-ratio: 1/1;
+      position: relative; aspect-ratio: 3/2;
       border-radius: var(--radius-lg); overflow: hidden;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(92,138,40,0.18), transparent 60%),
-        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.5), transparent 50%),
-        var(--bg-alt);
+      background: var(--bg-card);
       display: grid; place-items: center;
       box-shadow: 0 1px 0 rgba(20,17,14,0.04), 0 16px 48px rgba(20,17,14,0.10);
     }
-    .hero-visual::before {
-      content: ""; position: absolute; inset: 0; pointer-events: none;
-      background-image: radial-gradient(circle at 1px 1px, rgba(20,17,14,0.04) 1px, transparent 0);
-      background-size: 16px 16px;
-    }
     .hero-visual img {
       position: relative; z-index: 1;
-      width: 88%; max-width: 460px; height: auto;
-      filter: drop-shadow(0 12px 32px rgba(20,17,14,0.18));
+      width: 100%; height: 100%; object-fit: cover; object-position: center;
     }
     .hero-badge {
       position: absolute; left: 22px; bottom: 22px; z-index: 2;
